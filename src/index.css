@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cabinet Grotesk", sans-serif;
+  --font-body: "Satoshi", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-canvas: oklch(0.965 0.014 85);
+  --color-paper: oklch(0.93 0.02 85);
+  --color-ink: oklch(0.17 0.02 265);
+  --color-mute: oklch(0.43 0.02 265);
+  --color-accent: oklch(0.58 0.2 35);
+  --color-sage: oklch(0.9 0.05 150);
+}
+
+html { overscroll-behavior: none; }
+html, body { @apply bg-(--color-canvas) text-(--color-ink) font-body antialiased; }
+body { overflow-x: clip; }
+*, *::before, *::after { box-sizing: border-box; }
+::selection { background: var(--color-accent); color: white; }
+a, button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 4px; }
+
+.dots {
+  background-image: radial-gradient(oklch(0.17 0.02 265 / 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.mono { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.wrap { width: min(1280px, 100% - 2.5rem); margin-inline: auto; }
+.h2 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.03em; line-height: 0.95; font-size: clamp(2.5rem, 7vw, 5.5rem); }
+
+/* reveals: visible by default, only hidden once JS has opted in */
+.js .rv { opacity: .3; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms), transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms); }
+.js .rv.in { opacity: 1; transform: none; }
+
+/* masked line reveal */
+.mask { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.mask > span { display: inline-block; animation: up 1s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d,0ms); }
+@keyframes up { from { transform: translateY(105%); } to { transform: none; } }
+
+.btn { display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.5rem; border-radius: 999px; font-weight: 700; transition: transform .25s, background .25s, color .25s; border: 1.5px solid var(--color-ink); }
+.btn:active { transform: scale(.97); }
+.btn-primary { background: var(--color-ink); color: var(--color-canvas); }
+.btn-primary:hover { background: var(--color-accent); border-color: var(--color-accent); }
+.btn-ghost:hover { background: var(--color-ink); color: var(--color-canvas); }
+
+.chip { font-family: var(--font-mono); font-size: .8rem; padding: .55rem .9rem; border-radius: 999px; background: var(--color-canvas); border: 1.5px solid var(--color-ink); box-shadow: 3px 3px 0 var(--color-ink); cursor: grab; user-select: none; touch-action: none; white-space: nowrap; }
+.chip:active { cursor: grabbing; box-shadow: 1px 1px 0 var(--color-ink); }
+
+.cursor-dot { position: fixed; left: 0; top: 0; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; border: 1.5px solid var(--color-accent); pointer-events: none; z-index: 100; transition: width .25s, height .25s, margin .25s, background .25s; mix-blend-mode: multiply; }
+.cursor-dot.big { width: 70px; height: 70px; margin: -35px 0 0 -35px; background: oklch(0.58 0.2 35 / .15); }
+@media (pointer: coarse), (prefers-reduced-motion: reduce) { .cursor-dot { display: none; } }
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) { body.has-cursor, body.has-cursor a, body.has-cursor button { cursor: none; } body.has-cursor .chip { cursor: none; } }
+
+.marquee { display: flex; width: max-content; animation: mq 38s linear infinite; }
+@keyframes mq { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  .mask > span, .marquee { animation: none; }
+  * { scroll-behavior: auto !important; }
+}

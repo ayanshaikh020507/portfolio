@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Fill the {{TOKENS}} (the compliance gate fails on any left over):
+        TITLE        — product name + one-line hook, ≤60 chars
+        DESCRIPTION  — ≤155 chars
+        CANONICAL    — public origin, no trailing slash (from get-public-url.py)
+        THEME_COLOR  — hex matching --color-canvas in src/index.css
+      Sites: also drop public/og-image.jpg (1200x630). Apps: og-image optional.
+    -->
+    <title>Mohammad Ayan Shaikh — Full Stack Developer</title>
+    <meta name="description" content="BCA student from Surat building full-stack web apps with the MERN stack and PHP/MySQL. Portfolio, projects and contact." />
+    <meta name="theme-color" content="#f6f1e9" />
+    <link rel="canonical" href="https://ayanshaikh.co.in/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mohammad Ayan Shaikh — Full Stack Developer" />
+    <meta property="og:description" content="BCA student from Surat building full-stack web apps with the MERN stack and PHP/MySQL. Portfolio, projects and contact." />
+    <meta property="og:url" content="https://ayanshaikh.co.in/" />
+    <meta property="og:image" content="https://ayanshaikh.co.in/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mohammad Ayan Shaikh — Full Stack Developer" />
+    <meta name="twitter:description" content="BCA student from Surat building full-stack web apps with the MERN stack and PHP/MySQL. Portfolio, projects and contact." />
+    <meta name="twitter:image" content="https://ayanshaikh.co.in/og-image.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+      <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link href="https://fonts.bunny.net/css?family=cabinet-grotesk:500,800|satoshi:400,500,700|jetbrains-mono:400,500&display=swap" rel="stylesheet" />
+    <script>document.documentElement.classList.add("js")</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mohammad Ayan Shaikh","jobTitle":"Full Stack Developer","url":"https://ayanshaikh.co.in","email":"mailto:ayanshaikh020507@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Surat","addressCountry":"IN"},"sameAs":["https://github.com/ayanshaikh020507","https://linkedin.com/in/ayan-shaikh-27a65943b"]}</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

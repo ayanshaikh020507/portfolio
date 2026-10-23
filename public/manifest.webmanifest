@@ -1,0 +1,10 @@
+{
+  "name": "Ayan Shaikh Portfolio",
+  "short_name": "Ayan Shaikh Portfolio",
+  "description": "BCA student from Surat building full-stack web apps with MERN and PHP/MySQL.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f1e9",
+  "theme_color": "#f6f1e9",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
