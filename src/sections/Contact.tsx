@@ -4,6 +4,7 @@ import { profile } from "../data/content";
 
 type Errs = Partial<Record<"name" | "email" | "message", string>>;
 
+import Magnetic from "../components/Magnetic";
 export default function Contact() {
   const [errs, setErrs] = useState<Errs>({});
   const [sent, setSent] = useState(false);
@@ -61,7 +62,7 @@ export default function Contact() {
                 {errs[k] && <p id={`${k}-e`} role="alert" className="text-[oklch(0.78_0.14_35)] text-sm mt-1.5">{errs[k]}</p>}
               </div>
             ))}
-            <button className="btn bg-(--color-accent) border-(--color-accent) text-white hover:bg-white hover:text-(--color-ink)" type="submit"><Send size={18} /> Open in my email app</button>
+            <Magnetic><button className="btn bg-(--color-accent) border-(--color-accent) text-white hover:bg-white hover:text-(--color-ink)" type="submit"><Send size={18} /> Open in my email app</button></Magnetic>
             <p className="text-sm opacity-60" aria-live="polite">
               {sent ? "Your email app should have opened with the message ready to send. If not, write to the address above." : "This opens your email app with the message pre-filled; nothing is stored on this site."}
             </p>

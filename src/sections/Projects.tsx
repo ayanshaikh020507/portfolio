@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { ArrowUpRight, Github } from "lucide-react";
 import { projects, profile, type Project } from "../data/content";
 import { gsap, reduceMotion } from "../lib/lenis";
+import Magnetic from "../components/Magnetic";
 
 function EventMock() {
   return (
@@ -79,7 +80,7 @@ function Card({ p, i }: { p: Project; i: number }) {
             {p.repo && <a className="btn bg-(--color-canvas) text-(--color-ink)" href={p.repo} target="_blank" rel="noreferrer"><Github size={18} /> Source code</a>}
             {p.demo && <a className="btn bg-(--color-accent) text-white border-(--color-accent)" href={p.demo} target="_blank" rel="noreferrer">Live demo <ArrowUpRight size={18} /></a>}
             {!p.repo && !p.demo && (
-              <a className="btn border-current hover:opacity-80" href={profile.github} target="_blank" rel="noreferrer"><Github size={18} /> More on GitHub</a>
+              <Magnetic><a className="btn border-current hover:opacity-80" href={profile.github} target="_blank" rel="noreferrer"><Github size={18} /> More on GitHub</a></Magnetic>
             )}
           </div>
           {!p.repo && <p className="mono opacity-60 mt-3 text-[11px] normal-case">Repository link not published yet.</p>}

@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Cursor from "./components/Cursor";
+import Loader from "./components/Loader";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
+import Request from "./sections/Request";
 import Education from "./sections/Education";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
@@ -31,6 +33,7 @@ export default function App() {
   return (
     <>
       <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-(--color-ink) focus:text-white focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
+      <Loader />
       <Cursor />
       <Nav />
       <main>
@@ -38,6 +41,7 @@ export default function App() {
         <About />
         <Skills />
         <Projects />
+        <Request />
         <Education />
         <Contact />
       </main>

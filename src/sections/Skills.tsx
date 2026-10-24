@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { skillGroups } from "../data/content";
+import Scramble from "../components/Scramble";
 
 export default function Skills() {
   const [sel, setSel] = useState(0);
@@ -35,7 +36,7 @@ export default function Skills() {
               {g.items.map((it, i) => (
                 <li key={it} className="border-b border-white/15 py-4 md:py-5 flex items-baseline gap-4 group" style={{ animation: "slide .6s cubic-bezier(.2,.7,.2,1) both", animationDelay: `${i * 70}ms` }}>
                   <span className="mono opacity-50">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight transition-transform group-hover:translate-x-3 group-hover:text-(--color-accent)">{it}</span>
+                  <Scramble text={it} className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight transition-transform group-hover:translate-x-3 group-hover:text-(--color-accent)" />
                 </li>
               ))}
             </ul>

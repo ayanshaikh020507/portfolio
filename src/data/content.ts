@@ -105,3 +105,26 @@ export const education = [
     current: false,
   },
 ];
+
+export const requestFlows = [
+  {
+    id: "event-management",
+    label: "Event Management System",
+    steps: [
+      { tag: "The browser", name: "React", text: "Login state and protected routes decide which pages a signed-in user can reach." },
+      { tag: "The API", name: "Express.js", text: "REST endpoints to create, update, delete and search events." },
+      { tag: "The database", name: "MongoDB", text: "Where the events are stored and queried from." },
+      { tag: "Back to the screen", name: "Response", text: "The result returns to React and the event list updates." },
+    ],
+  },
+  {
+    id: "student-management",
+    label: "Student Management System",
+    steps: [
+      { tag: "The browser", name: "Admin dashboard", text: "The admin signs in and uses forms to add, edit, search and filter students." },
+      { tag: "The server", name: "PHP", text: "Sessions check the login, then PHP handles each create, update and delete." },
+      { tag: "The database", name: "MySQL", text: "Student records live in a designed relational schema and are queried from here." },
+      { tag: "Back to the screen", name: "Response", text: "PHP sends the updated student list back to the dashboard." },
+    ],
+  },
+];

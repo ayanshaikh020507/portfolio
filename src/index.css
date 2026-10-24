@@ -59,3 +59,19 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .mask > span, .marquee { animation: none; }
   * { scroll-behavior: auto !important; }
 }
+
+/* intro loader: lock scroll and hold hero text until it lifts */
+html.loading, html.loading body { overflow: hidden; }
+html.loading .mask > span { animation-play-state: paused; }
+
+/* hero cursor spotlight on the dotted background */
+.spot, .spot-glow { position: absolute; inset: 0; pointer-events: none; opacity: var(--so, 0); transition: opacity .4s ease; }
+.spot { background-image: radial-gradient(oklch(0.58 0.2 35 / .75) 1.6px, transparent 2px); background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 100%);
+  mask-image: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 100%); }
+.spot-glow { background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), oklch(0.58 0.2 35 / .10), transparent 70%); }
+@media (pointer: coarse), (prefers-reduced-motion: reduce) { .spot, .spot-glow { display: none; } }
+
+.caret { display: inline-block; width: .55ch; height: 1.1em; vertical-align: -.15em; margin-left: 1px; background: var(--color-accent); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
