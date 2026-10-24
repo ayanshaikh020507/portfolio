@@ -10,7 +10,7 @@ export const profile = {
   phoneHref: "tel:+919157186312",
   github: "https://github.com/ayanshaikh020507",
   linkedin: "https://linkedin.com/in/ayan-shaikh-27a65943b",
-  website: "https://ayanshaikh.co.in",
+  website: "",
 };
 
 export const nav = [
@@ -28,7 +28,7 @@ export const skillGroups = [
   { id: "languages", title: "Languages", note: "Studied and practised", items: ["JavaScript", "Python", "Java", "C", "C++"] },
 ];
 
-export const floaters = ["React", "Node.js", "Express", "MongoDB", "PHP", "MySQL", "REST", "JavaScript"];
+export const floaters = ["React", "Node.js", "Express", "MongoDB", "PHP", "MySQL", "REST", "JavaScript", "Python", "Java", "HTML", "CSS"];
 
 /** Add a project: push a new object here. Set `repo` / `demo` to real URLs when they exist; null hides the link. */
 export type Project = {
