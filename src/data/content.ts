@@ -22,7 +22,7 @@ export const nav = [
 ];
 
 export const skillGroups = [
-  { id: "frontend", title: "Frontend", note: "Interfaces in the browser", items: ["React", "JavaScript (ES6+)", "HTML5", "CSS3"] },
+  { id: "frontend", title: "Frontend", note: "Interfaces in the browser", items: ["React", "JavaScript", "HTML5", "CSS3"] },
   { id: "backend", title: "Backend", note: "Servers, routes and APIs", items: ["Node.js", "Express.js", "PHP", "REST APIs"] },
   { id: "databases", title: "Databases", note: "Where the data lives", items: ["MongoDB", "MySQL"] },
   { id: "languages", title: "Languages", note: "Studied and practised", items: ["JavaScript", "Python", "Java", "C", "C++"] },
